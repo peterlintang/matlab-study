@@ -15,7 +15,7 @@ KRON(A, B)	KEONECHER zhang ji liang
 '
 ;
 
-format
+format long|short
 
 >
 <
