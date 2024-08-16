@@ -110,3 +110,39 @@ expm
 logm
 
 
+for i=
+end
+
+while exp
+
+end
+
+if exp
+end
+
+if exp
+else 
+end
+
+if exp
+elseif
+else
+end
+
+switch exp
+case constant1
+case constant2
+otherwise
+end
+
+break
+return
+
+disp
+echo on/off
+
+inmem	// cha kan na xie han shu wen jian zai nei cun zhong 
+error
+
+
+
