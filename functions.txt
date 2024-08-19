@@ -151,6 +151,7 @@ syms	// chuang jian duo ge fu hao
 
 subs
 solve
+double
 
 
 
