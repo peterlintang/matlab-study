@@ -149,6 +149,8 @@ chapter 3
 sym	// chuang jian fu hao
 syms	// chuang jian duo ge fu hao
 
+subs
+solve
 
 
 
