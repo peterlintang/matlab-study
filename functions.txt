@@ -145,4 +145,11 @@ inmem	// cha kan na xie han shu wen jian zai nei cun zhong
 error
 
 
+chapter 3
+sym	// chuang jian fu hao
+syms	// chuang jian duo ge fu hao
+
+
+
+
 
