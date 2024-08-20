@@ -147,11 +147,34 @@ error
 
 chapter 3
 sym	// chuang jian fu hao
+sym(x, 'real'|'unreal')
 syms	// chuang jian duo ge fu hao
+syms x real|unreal
 
 subs
 solve
+
 double
+str2num
+numeric
+int2str
+num2str
+
+plot(x)
+plot(x, y)
+fplot('fun_name', limits, tol)
+ezplot(sym_fun, limits)
+
+vpa
+Digits(n)
+
+map(fcn, expr, arg2, ..., argn)
+map2(fcn, arg1, expr, arg3, ..., argn)
+%maple
+
+funtool
+help function	// get help for function
+
 
 
 
