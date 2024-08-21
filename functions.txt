@@ -176,6 +176,22 @@ map2(fcn, arg1, expr, arg3, ..., argn)
 funtool
 help function	// get help for function
 
+chapter 4
+A' // zhuan zhi
+isequal(A, A') == 1	// dui cheng ju zhen 对称矩阵
+isequal(A, -A') == 1	// fan dui cheng ju zhen 反对称矩阵
+det(A)		// 计算方阵的行列式
+[l, u] = lu(A)	// 分解矩阵
+det(l)*prod(diag(u)) == det(A)
+
+inv(A)	//求A逆矩阵
+X = pinv(A)	// 伪逆矩阵
+X = pinv(A, tol)	// 伪逆矩阵
+AXA = A XAX=X
+
+AX=b --> X = pinv(A)*b 或 A\b求得	求解方程
+rank(A)	// 求秩
+trace(A) 	// 矩阵的迹
 
 
 
