@@ -162,7 +162,8 @@ num2str
 
 plot(x)
 plot(x, y)
-fplot('fun_name', limits, tol)
+%fplot('fun_name', limits, tol)
+fplot(@(x) sin(1./tan(pi.*x)), [-0.1, 0.1])
 ezplot(sym_fun, limits)
 
 vpa
