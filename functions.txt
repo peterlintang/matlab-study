@@ -193,6 +193,86 @@ AX=b --> X = pinv(A)*b 或 A\b求得	求解方程
 rank(A)	// 求秩
 trace(A) 	// 矩阵的迹
 
+n = norm(A)	// 返回矩阵最大奇异值	// 范数
+n = norm(A, 1) // 返回矩阵最大列之和
+n = norm(A, inf) //返回矩阵最大行之和
+n = norm(A, 'fro')
+
+c = cond(X) // 矩阵最大奇异值与最小奇异值之比
+c = cond(X, 1)
+c = cond(X, 2)
+c = cond(X, 'fro')
+c = cond(X, inf)
+AX = b // 求解过程，　矩阵A的条件数越大，所得解受A , b数据的误差的影响越大
+
+
+rank(A) 	//返回矩阵的秩
+svd(A)
+
+eye(n)	// 生成n阶单位阵
+eye(m, n) eye([m, n])	// 生成m * n 矩阵
+eye(size(A))	// 生成与A具有相同大小的单位阵
+ones(n)
+ones(m, n)
+ones(n1, n2, n3, ...)
+ones(size(A))
+zeros(n)
+zeros(m, n)
+zeros(n1, n2, n3, ...)
+zeros(size(A))
+
+tic	// 开始计时
+toc 	//读取计时
+
+rand(n)	// 生成随机n * n 矩阵
+rand(m, n)
+rand(n1, n2, n3, ...)
+rand(size(A))
+rand('state')
+
+rand('state', s)		// 改变发生器
+rand('state', 0)
+rand('state', n)
+rand('state', sum(100 * clock))
+
+rand('seed', s)	// 使用单种子发生器
+rand('state', s)	// 使用多种子发生器
+rand('seed') 	//查看
+
+randn()	// 与rand相同用法
+
+magic(n)
+
+diag(v, k)	// 返回矩阵的第k列对角线由向量v组成, k 可以是正负或０
+
+
+A(i, j)	//矩阵标识
+A(vr, vc)
+A(v1, v2)
+A(:,v1)
+A(find(B))	//非零取
+[] 矩阵扩充
+
+A[:,2] = []	//部分删除
+
+diag(A, k)		//抽取A的第k对角线元素组成列向量
+tril(A, k)		// 下三角
+triu(A, k)		// 上三角
+
+reshape(A, n1, n2, n3, ...)
+
+rot90(A)	//逆时针旋转90度
+fliplr(A)	// 左右翻转
+flipud(A)	//上下翻转
+
+
+Ax=b	求解	洽定方程 n * n
+x = inv(A)*b or A\b
+
+pinv(A)*b	// 超定方程 m * n , A 列满秩，　n > m, 方程无精确解
+
+
+
 
 
 
