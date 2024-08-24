@@ -271,7 +271,28 @@ x = inv(A)*b or A\b
 
 pinv(A)*b	// 超定方程 m * n , A 列满秩，　n > m, 方程无精确解
 
+a = null(A)	a'*a = 1
 
+解非负最小二乘(2021b 貌似没有这个函数, 需scatool)
+nnls(A, b)	//返回Ax=b的最小二乘解, x >= 0
+nnls(A, b, tol)	//返回Ax=b的最小二乘解, x >= 0
+[x, w] = nnls(A, b) x[i] = 0时，w[i] <= 0; x[i] > 0时, w[i] = 0;
+[x, w] = nnls(A, b, tol) x[i] = 0时，w[i] <= 0; x[i] > 0时, w[i] = 0;
+
+向量生成
+X=m1:m2
+X=m1:d:m2
+
+L = linspace(x, y)
+L = linspace(x, y, n)	// 生成n维向量，默认１００, 线性等分
+
+L = logspace(a, b)  10^a -- 10^b 50个对数等分行向量
+L = logspace(a, b, n)
+L = logspace(a, pi)  10^a -- pi 50个对数等分行向量
+L = logspace(a, pi, n)
+
+
+三维向量运算
 
 
 
