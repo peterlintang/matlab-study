@@ -349,7 +349,29 @@ k = polyder(a, b)	两个多项式a,b乘积的微分多项式k,
 [q, d] = polyder(b, a)	两个多项式a,b的商b/a的微分,q结果分子多项式,d结果分母多项式
 
 
+实对称正定矩阵分解
+R = chol(X)	cholesk,  X对称且正定, R'R = X
+[R, p] = chol(X)	if X正定, p = 0R ; if X不正定, p 是一个正整数， R 是一个q = p - 1 阶的上三角阵，　使得R'R = X(1:q, 1:q)
 
+[l, d] = ldl(X)		ld分解正定矩阵对称
+
+[L, U] = lu(X)	矩阵lu分解，上三角矩阵U, 准下三角矩阵L, X = LU
+[LL, U, P] = lu(X)	上三角矩阵U, 下三角矩阵LL, 置换矩阵P, LL*U = P*X, L = inv(P)*LL
+[Q, R] = qr(X)	矩阵的正交三角分解, 适用任意矩阵, 将矩阵分解为一个正交矩阵和一个上三角矩阵的乘积, X=QR, 可用来解方程个数多余未知数个数的线性方程组
+[Q, R, E] = qr(X)	置换矩阵E,对角线元素递减的上三角矩阵R, 酉矩阵Q
+A = qr(X)	得到一个LINPACK的ZARDC程序的输出，　TRIU(qr(X))的结果是R
+
+奇异值分解
+s = svd(X)	得到矩阵X的奇异值组成的向量
+[U, S, V] = svd(X)	S: 与X同维数的矩阵,　其对角线元素为递减的非负值, 酉矩阵U,V, X=USV'
+s = svd(A)	向量s的非零元素个数是矩阵A的秩
+
+hessenberg
+[P, H] = hess(A)	A=P*H*P',  P'*P = eye(size(A))	A为方阵
+
+schur
+T = schur(A)	
+[U, T] = schur(A)	A=U*T*U',  U'*U = eye(size(A))
 
 
 
