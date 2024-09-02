@@ -376,6 +376,41 @@ T = schur(A)
 
 
 
+chapter 6
+
+求极限
+limit(expression)
+limit(expression, var)	求极限
+limit(expression, var, value)	%变量var在趋近a时的值
+
+diff	%求导数
+diff(f)		%求f的一阶导数
+diff(f, n)	%求f的n阶导数
+diff(f, variable, n)	%多元函数求导
+
+
+
+求积分
+int(f)
+int(f, var)
+int(f, 积分下限, 积分上限)
+int(f, var, 积分下限, 积分上限)
++/-inf : 正负无限
+
+
+%化简
+pretty(f)	手写
+collect(A)	降幂排列法
+collect(A, variable)	降幂排列法
+expand(t)	展开法
+horner(A)	重叠法
+factor(A)	因式分解法
+simplify(A)	一般化简法
+simple(A)	不定化简		//貌似没有
+
+
+
+
 
 
 
