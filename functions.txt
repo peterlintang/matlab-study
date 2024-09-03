@@ -409,6 +409,18 @@ simplify(A)	一般化简法
 simple(A)	不定化简		//貌似没有
 
 
+提取与替换代入
+[Y, SIGMA] = subexpr(X, SIGMA)	 % X待整理的式子或代数式矩阵, Y经提取各种因子后，整理完毕的代数式或其矩阵
+				% SIGMA 整理过程中提出的各种因子
+ss = subs(s, old, new)	% s 代数式 old代数式s中将要被替换的旧变量名, new替换old的新变量或代数式, ss替换后的新代数式
+ss = subs(s, {old1, old2, ...}, {new1, new2, ...})	% 多个变量替换 s 代数式 old代数式s中将要被替换的旧变量名, new替换old的新变量或代数式, ss替换后的新代数式
+
+级数求和
+symsum(s)	s为待求和的级数的通项表达式
+findsym(s)	查看系统默认变量	貌似不支持
+findsys
+symsum(s, v)	v为求和变量，求和将由v等于１求至v-1;
+symsum(s, v, a, b)	v为求和变量，求和将由v等于a求至b;
 
 
 
