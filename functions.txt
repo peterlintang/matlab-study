@@ -432,6 +432,11 @@ taylor(f, a)	f为待展开的函数表达式,解出函数f关于其默认变量�
 taylor(f, v, a, 'param', n)	f为待展开的函数表达式,解出函数f关于其v变量的麦克劳林型的n阶近似展开, 在a处
 
 
+二重积分
+fzero
+
+linsolve	求解线性方程组
+solve		求解代数方程组
 
 
 
