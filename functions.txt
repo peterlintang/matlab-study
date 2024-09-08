@@ -392,11 +392,11 @@ diff(f, variable, n)	%多元函数求导
 
 
 求积分
-int(f)
-int(f, var)
-int(f, 积分下限, 积分上限)
-int(f, var, 积分下限, 积分上限)
-+/-inf : 正负无限
+int(f)		不定积分
+int(f, var)	不定积分
+int(f, 积分下限, 积分上限)	定积分
+int(f, var, 积分下限, 积分上限)	定积分
++/-inf : 正负无限	广义积分
 
 
 %化简
@@ -453,6 +453,18 @@ z=fzero('fun', x, tol)		新的貌似不支持，而是其他的命令形式
 z=fzero('fun', x, tol, trace)新的貌似不支持，而是其他的命令形式
 
 fsolve
+
+
+chapter 7
+
+多元函数极限
+f=(x^2+y^2)/(sin(x)+cos(x))	在(0, pi)处极限
+g = limit(f, 0);
+ans = limit(g, pi);
+
+多元函数求导
+
+
 
 
 
