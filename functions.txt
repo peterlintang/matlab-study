@@ -474,6 +474,22 @@ jacobian(f)命令求出多元函数f的梯度，其第一分量，第二分量�
 在过此点的所有方向导数中，模数最大的所对应的方向的单位向量即为多元函数的梯度
 jacobian(f)*v
 
+求梯度的数值命令
+grdient		求解由矩阵f表示场的梯度向量
+FX = gradient(F)	求解一维向量F的数值梯度dy/dx, 步长dx = 1
+[FX, FY] = gradient(F)		与第一种相同，求解二维 dx = 1, dy = 1
+[Fx, Fy, Fz, ...] = gradient(F)	与第一种相同，求解多维	dx = 1, dy = 1, dz = 1
+[...] = gradient(F, h)		h为步长
+[...] = gradient(F, h1, h2, ... )	h1, h2, ... 为步长
+
+[x, y] = meshgrid(-3:0.3:3)	生成矩阵
+quiver(dx, dy)	作图
+
+surfnorm	求解在mesh(Z)图像中每个节点处的法向量
+[Nx, Ny, Nz] = surfnorm(Z)		求每个节点处法向量的数值表达[Nx, Ny, Nz], 步长为1
+[Nx, Ny, Nz] = surfnorm(X, Y, Z)	求每个节点处法向量的数值表达[Nx, Ny, Nz], 步长为X, Y
+surfnorm(Z)				不返回数值,自动先用surf(Z), surf(X, Y, Z)命令画出曲面,然后在每个节点处以箭头的形式标出该点的法向量
+surfnorm(X, Y, Z)			同上，　步长为X, Y
 
 
 
