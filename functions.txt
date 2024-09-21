@@ -508,8 +508,126 @@ v 以行向量形式表达的变量
 
 
 
+inmem	查看加载到内存的函数
+
+空间曲线积分
+
+空间曲线
+a<=t<=b
+x=x(t)
+y=y(t)
+z=z(t)
+曲线的点M(x, y, z)的切线方向为
+v=(x',y',z')= jacobian([x, y, z], t)
+
+过点M0(x0, y0, z0)的切线方程为
+F=-[x, y, z] + [x0, y0, z0] + v0*(t-t0)=0
+
+过点M的法平面方程为
+G=[x-x0, y-y0, z-z0].' * v0 = 0
+
+空间曲面
+z=f(x, y)
+点m的切平面方程
+F=(z-z0)-(diff(f, x)*(x-x0) + diff(f, y)*(y-y0)) = 0
+或曲面表示为
+F(x,y,z)=0
+点m的切平面方程
+G=diff(F,x)*(x-x0)+diff(F,y)*(y-y0)+diff(F,z)*(z-z0)=jacobian(F, [x y z])*[x-x0,y-y0,z-z0]'
+法线方向向量v为
+v=jacobian(F,[x, y, z])
+法线方程为
+V=-[x;y;z] + [x0;y0;z0] + [diff(f, x); diff(f, y); diff(f, z)] (x=x0)
+=-[x;y;z] + [x0;y0;z0] + v
+
+空间曲线以两平面相交线形式给出
+F(x, y, z) = 0;
+G(x, y, z) = 0;
+过曲线点m的切线方向矢量为
+v=jacobian(F, [x, y, z])' * jacobian(G, [x, y, z])	 ??? 
 
 
+第二型曲线积分
+曲线L: x=x(t) y=y(t) z=z(t)  (a<=t<=b)
+L上任一点M(x(t), y(t), z(t)), 正向单位切向量
+T(M) = (x'(t)*i + y'(t)*j + z'(t)*k / (x'(t)^2 + y'(t)^2 +z'(t)^2)^0.5
+L在M的有向弧微分为
+dL=T(M) * dl=x'(t)dt*i+y'(t)dt*j+z'(t)dt*k = dx*i + dy*j + dz*k
+
+函数F(x, y, z)沿曲线L前进时的积分元为
+dw=F(x, y, z)*dL = F(x, y, z) * T(x, y, z) * dl
+
+
+lalace fourier and z变换与逆变换
+
+傅里叶变换
+F=fourier(f)		关于变量x的表达式进行变换得到F(w),当表达式是关于变量w时，变换结果为F(t)
+F=fourier(f, v)		指定变换结果是变量v的函数
+F=fourier(f, u, v)	在第二种的基础上进一步确定要对函数表达式f作关于变量u的fourier变换
+傅里叶逆变换
+f=ifourier(F)
+f=ifourier(F, u)
+f=ifourier(F, v, u)
+
+laplace变换
+laplace(F)		F为变量t的函数,没有则对默认变量进行变换
+laplace(F, t)		F以变量x为积分变量
+laplace(F, w, z)	F以变量w为积分变量,
+laplace逆变换
+F=ilaplace(L)
+F=ilaplace(L, y)
+F=ilaplace(L, y, x)
+
+z变换
+F=ztrans(f)
+F=ztrans(f, w)
+F=ztrans(f, k, w)
+z逆变换
+F=iztrans(f)
+F=iztrans(f, k)
+F=iztrans(f, w, k)
+
+信号处理数值变换命令
+线性调频z变换命令
+y=czt(x, m, w, a)
+y=czt(x)
+离散余弦变换逆变换
+y=dct(x)
+y=dct(x, n)
+idct
+快速傅里叶变换逆变换
+y=fft(x)
+y=fft(x, n)
+y=ifft(x)
+y=ifft(x, n)
+二维快速傅里叶变换逆变换
+Y=fft2(X)
+Y=fft2(X, m, n)
+Y=ifft2(X)
+Y=ifft2(X, m, n)
+
+
+常微分方程及方程组的解
+
+syms x t y(t)
+dsolve(F == 0);
+dsolve(F == 0, var);
+
+
+
+带初始条件的常微分方程
+dsolve(F == 0, condition1, condition2, ..., var)
+求y'''-y'' = x解
+syms x y(t) z a
+D3y=diff(y, 3)
+D2y=diff(y, 2)
+D1y=diff(y, 1)
+dsolve(D3y-D2y==x, y(1) == 8, Dy(1) == 7, D2y(2) == 4, x)
+
+
+求解常微分方程组
+
+求解线性齐次常微分方程组
 
 
 
