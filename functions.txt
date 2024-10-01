@@ -144,6 +144,9 @@ echo on/off
 inmem	// cha kan na xie han shu wen jian zai nei cun zhong 
 error
 
+who	查看当前变量
+whos
+
 
 chapter 3
 sym	// chuang jian fu hao
@@ -696,6 +699,27 @@ q = quad('fun', a, b, tol, trace)	函数fun在区间[a,b]上的数值积分,相�
 
 高阶法求积分
 quad8
+
+
+charpter 10 调试
+设置断电 dbstop
+dbstop at LineNo in Function
+dbstop in Function
+dbstop if keyword
+	keyword: error naninf infnan warning
+
+dbup	调试命令
+dbdown
+dbstack
+dbstep
+dbcont
+dbquit
+dbclear at Lineno in Function
+dbclear all in Function
+dbclear all
+dbclear in mfilename
+
+列出程序 dbtype
 
 
 
