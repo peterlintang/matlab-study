@@ -688,6 +688,16 @@ VI = interp3(V, ntimes)
 最佳均方逼近
 
 
+数值积分
+低阶法求数值积分
+q = quad('fun', a, b)	函数fun在区间[a,b]上的数值积分
+q = quad('fun', a, b, tol)	函数fun在区间[a,b]上的数值积分,相对误差tol,默认1e-3
+q = quad('fun', a, b, tol, trace)	函数fun在区间[a,b]上的数值积分,相对误差tol,默认1e-3,动态图形形式实现
+
+高阶法求积分
+quad8
+
+
 
 
 
