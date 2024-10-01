@@ -644,12 +644,48 @@ p = polyfit(x, y, n)	对x,y进行n阶多项式逼近，p返回多项式的系数
 牛顿法
 
 
+插值
+yi = interp1(x, y, xi); yi是向量xi根据数据x,y的插值, 若y是矩阵，插值对y的每一列进行, 
+			函数返回一个length(xi)*length(xi)的矩阵yi，
+			如果xi中的元素不在x的范围内,插值结果为nan
+yi = interp1(x, y, xi, method); yi是向量xi根据数据x,y的插值, 用指定方法,若y是矩阵，插值对y的每一列进行, 
+			函数返回一个length(xi)*length(xi)的矩阵yi，
+			如果xi中的元素不在x的范围内,插值结果为nan
+			x元素单调排列,如果x的元素等间隔，可用快速插值
+			默认线性插值
+'nearest'	最近插值
+'linear'	线性插值
+'spline'	三次样条插值
+'cubic'		三次插值
+
+
+三次样条插值
+yi = spline(x, y, xi);	利用数据x, y在xi处进行插值,函数返回插值的结果,x为原始数据的第一坐标,y为函数值,xi可以为向量或矩阵
+pp = spline(x, y)得到三次样条插值的分段多项式,可以用函数ppval(pp, x)计算多项式在x处的值
+
+一维表查找
+貌似没这个函数
+y = table1(tab, x)	从表tab中得到有若干线性插值列的表，tab的第一列相当于数据的第一坐标x，第一列数据必须单调，
+			tab的其余列为插值的函数值，按列进行插值,x可以是向量，返回的变量y的列数是表tab的列数减１,
+			ｙ的函数等于向量x的长度,x中的元素在tab第一列范围内
 
 
 
+二维插值
+ZI = interp2(X, Y, Z, XI, YI) X Y原始数据第一第二维坐标，Z函数值, 函数返回在XI YI所指定的位置插值所得的函数值
+ZI = interp2(X, Y, Z, XI, YI, method) X Y原始数据第一第二维坐标，Z函数值, 函数返回在XI YI所指定的位置插值所得的函数值
+'nearest'	最近插值
+'linear'	双线性插值
+'cubic'		三次插值
+ZI = interp2(Z, ntimes)在Z的各点间插入数据点以扩展Z,执行ntimes次
 
+三维插值
+VI = interp3(X, Y, Z, V, XI, YI, ZI)
+VI = interp3(X, Y, Z, V, XI, YI, ZI, method)
+VI = interp3(V, XI, YI, ZI)
+VI = interp3(V, ntimes)
 
-
+最佳均方逼近
 
 
 
